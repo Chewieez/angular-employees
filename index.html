@@ -13,13 +13,16 @@
     <body ng-app="EmployeeMgmt">
         <section ng-controller="EmployeeCtrl">
             <div>
+                <h2>Current Employees</h2>
                 <!-- if you want to sort reverse order, put a minus in front of orderby value -->
                 <ul ng-repeat="(key, employee) in employees">
                     <li ng-if="employee.employmentEnd === 0"> {{ employee.firstName}} {{ employee.lastName }}
-                        <button ng-click="fireEmployee(employee)">Fire</button>
+                        <button ng-click="fireEmployee(employee, key)">Fire</button>
+                        <button ng-click="deleteEmployee(employee, key)">Delete</button>
                     </li>
                 </ul>
             </div>
+            <h2>Hire A New Employee</h2>
             <form ng-submit="createEmployee()">
                 <label>First Name</label>
                 <input type="text" ng-model="firstName">
