@@ -14,8 +14,8 @@
         <section ng-controller="EmployeeCtrl">
             <div>
                 <!-- if you want to sort reverse order, put a minus in front of orderby value -->
-                <ul ng-repeat="employee in employees | filter: {employmentEnd: null} | orderBy:'employmentStart'">
-                    <li>{{ employee.firstName}} {{ employee.lastName }}
+                <ul ng-repeat="(key, employee) in employees">
+                    <li ng-if="employee.employmentEnd === 0"> {{ employee.firstName}} {{ employee.lastName }}
                         <button ng-click="fireEmployee(employee)">Fire</button>
                     </li>
                 </ul>
