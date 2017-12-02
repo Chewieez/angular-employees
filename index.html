@@ -14,22 +14,26 @@
         <section ng-controller="EmployeeCtrl">
             <div>
                 <h2>Current Employees</h2>
-                <!-- if you want to sort reverse order, put a minus in front of orderby value -->
+                <!-- ng-repeat loops over an object or array. Here we are looping over an object and giving each object a variable of employee.  -->
                 <ul ng-repeat="(key, employee) in employees">
+                    <!-- if statement allows us to choose what to display, only display employees that do not have a employmentEnd time assigned. -->
+                    <!-- {{}} allow you to use variables in angular -->
                     <li ng-if="employee.employmentEnd === 0"> {{ employee.firstName}} {{ employee.lastName }}
+                        <!-- ng-click adds an event handler to the button and runs the function you insert. We're passing in the employee and the key of the object to the function so we know which employee to act on -->
                         <button ng-click="fireEmployee(employee, key)">Fire</button>
                         <button ng-click="deleteEmployee(employee, key)">Delete</button>
                     </li>
                 </ul>
             </div>
             <h2>Hire A New Employee</h2>
+            <!-- ng-submit overrides the default form submit behavior and runs the function we insert. -->
             <form ng-submit="createEmployee()">
                 <label>First Name</label>
+                <!-- ng-model allows you to bind the value of a variable between html and js -->
                 <input type="text" ng-model="firstName">
                 <label>Last Name</label>
                 <input type="text" ng-model="lastName">
                 <button>Add</button>
-                
             </form>
         </section>
     </body>
