@@ -40,6 +40,23 @@ angular.module("EmployeeApp").factory("EmployeeFactory", function ($http) {
                     }
                 })
             }
+        },
+        "fire": {
+            value: function(key, employee) {
+                return $http({
+                    method: "PUT",
+                    url: `${firebaseURL}/employees/${key}/.json`,
+                    data: employee
+                })
+            }
+        },
+        "delete": {
+            value: function(key) {
+                return $http({
+                    method: "DELETE",
+                    url: `${firebaseURL}/employees/${key}/.json`,
+                })
+            }
         }
     })
 })

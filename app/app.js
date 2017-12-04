@@ -9,7 +9,7 @@ angular.module("EmployeeApp").config(function ($routeProvider) {
             templateUrl: "app/employees/partials/list.html",
             controller: "EmployeeListCtrl"
         })
-        .when('/employees/new', {
+        .when('/employees/create', {
             templateUrl: 'app/employees/partials/create.html',
             controller: 'EmployeeCreateCtrl'
         })
