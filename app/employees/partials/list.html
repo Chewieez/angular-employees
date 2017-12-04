@@ -5,5 +5,5 @@
 </div>
 
 <div ng-repeat="person in employees | filter: query ">
-    <a href="#!/employees/{{ person.id }}" ng-if="!person.employmentEnd">{{ person.firstName }} {{ person.lastName }}</a>
+    <a href="#!/employees/detail/{{ person.id }}" ng-if="!person.employmentEnd">{{ person.firstName }} {{ person.lastName }}</a>
 </div>

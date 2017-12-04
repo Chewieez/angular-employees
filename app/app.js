@@ -13,7 +13,7 @@ angular.module("EmployeeApp").config(function ($routeProvider) {
             templateUrl: 'app/employees/partials/create.html',
             controller: 'EmployeeCreateCtrl'
         })
-        .when('/employees/:employeeId', { // <-- Magic happens here, what comes after the color becomes a variable to use in js file
+        .when('/employees/detail/:employeeId', { // <-- Magic happens here, what comes after the color becomes a variable to use in js file
             templateUrl: 'app/employees/partials/detail.html',
             controller: 'EmployeeDetailCtrl'
         })
