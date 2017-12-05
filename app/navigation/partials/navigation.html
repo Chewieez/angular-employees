@@ -1,0 +1,12 @@
+<ul ng-controller="NavCtrl">
+    <li>
+        <a href="/#!/employees/list">List Employees</a>
+    </li>
+    <li>
+        <a href="/#!/employees/new">Add Employee</a>
+    </li>
+    <li ng-include="'/app/navigation/partials/search.html'">
+    </li>
+
+    <button ng-click="logout()">Logout</button>
+</ul>

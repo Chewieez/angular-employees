@@ -1,14 +1,18 @@
 angular.module("EmployeeApp")
-    .factory("AuthFactory", function ($http, $timeout, $location) {
+    .factory("AuthFactory", function ($http, $timeout, $location, $route) {
         let currentUserData = null
 
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 currentUserData = user
                 console.log("User is authenticated")
-                $timeout(function () {
-                    $location.url("/employees/list")
-                }, 500)
+                if ($location.url() !== "/employees/list") {
+                    $timeout(function () {
+                        $location.url("/employees/list")
+                    }, 500)
+                } else {
+                    $route.reload()
+                }
 
             } else {
                 currentUserData = null

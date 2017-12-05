@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    padding: .3em;
+    background-color: orange;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.navbar li {
+    display: inline;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}

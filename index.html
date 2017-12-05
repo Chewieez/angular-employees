@@ -5,14 +5,13 @@
 <head>
     <meta charset="utf-8">
     <title>NSS Starter Kit - Angular</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body ng-app="EmployeeApp" ng-cloak>
 
-    <nav ng-controller="AuthCtrl">
-        <button ng-click="logoutUser()">Logout</button>
-    </nav>
-
+    <nav ng-include="'app/navigation/partials/navigation.html'" class="navbar"></nav>
+    
     <div ng-view></div>
 
     <script src="./lib/node_modules/angular/angular.min.js"></script>
@@ -20,6 +19,7 @@
     <script src="./lib/node_modules/angular-route/angular-route.js"></script>
     <script src="./app/app.js"></script>
     <script src="./app/app.config.js"></script>
+    <script src="./app/navigation/controllers/NavCtrl.js"></script>
     <script src="./app/auth/factories/AuthFactory.js"></script>
     <script src="./app/auth/controllers/AuthCtrl.js"></script>
     <script src="./app/employees/factories/EmployeeFactory.js"></script>
