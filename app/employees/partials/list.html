@@ -1,9 +1,15 @@
 <a href="#!/employees/new">Hire Employee</a>
 
-<div>
+<!-- <div>
     <input type="text" ng-model="query" />
+</div> -->
+
+<h2>Current Employees</h2>
+<div ng-repeat="person in employees">
+    <a href="#!/employees/detail/{{ person.id }}" ng-if="!person.employmentEnd">{{ person.firstName }} {{ person.lastName }}</a>
 </div>
 
-<div ng-repeat="person in employees | filter: query ">
-    <a href="#!/employees/detail/{{ person.id }}" ng-if="!person.employmentEnd">{{ person.firstName }} {{ person.lastName }}</a>
+<h2>Past Employees</h2>
+<div ng-repeat="person in employees">
+    <a href="#!/employees/detail/{{ person.id }}" ng-if="person.employmentEnd"> {{ person.firstName }} {{ person.lastName }}</a>
 </div>
