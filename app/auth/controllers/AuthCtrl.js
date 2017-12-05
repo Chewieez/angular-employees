@@ -16,7 +16,7 @@ angular.module("EmployeeApp")
 
     $scope.registerUser = function(registerNewUser) {
       AuthFactory.registerWithEmail(registerNewUser).then(function (didRegister) {
-        logMeIn(registerNewUser)
+        $scope.logMeIn(registerNewUser)
       })
     }
 
