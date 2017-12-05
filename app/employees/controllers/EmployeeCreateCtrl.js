@@ -1,6 +1,6 @@
 angular
 .module("EmployeeApp")
-.controller("EmployeeCreateCtrl", function ($scope, EmployeeFactory) {
+.controller("EmployeeCreateCtrl", function ($scope, EmployeeFactory, $location) {
     $scope.newEmployee = {}
 
     $scope.hireEmployee = function () {
@@ -16,7 +16,8 @@ angular
             $scope.newEmployee.firstName = ""
             $scope.newEmployee.lastName = ""
 
-            EmployeeFactory.get
+            $location.url("/")
+
         })
     }
 })
